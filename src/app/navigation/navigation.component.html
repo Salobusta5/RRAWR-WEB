@@ -1,0 +1,38 @@
+<div id="header" class="nav-collapse nav-solid">
+  <div class="row clearfix">
+    <div class="col-1">
+      <!--Logo-->
+      <div id="logo">
+        <img src="assets/images/gatoya.png" id="navigation-logo" alt="Landing Page" />
+        <span class="logo-text">RRAWR</span>
+      </div>
+      <!--End of Logo-->
+
+      <!--Main Navigation - Solo visible en pantallas grandes -->
+      <nav id="nav-main" class="desktop-only">
+        <app-navmenu 
+          [menu]="menu" 
+          [menuOpen]="false">
+        </app-navmenu>
+      </nav>
+      <!--End of Main Navigation-->
+
+      <!-- Botón para toggle - Solo visible en móviles -->
+      <div id="nav-trigger" class="mobile-only">
+        <span
+          [class.open]="menuOpen"
+          (click)="toggleMenu(!menuOpen)">
+        </span>
+      </div>
+      
+      <!-- Menú móvil - visible solo cuando menuOpen es true y en pantallas pequeñas -->
+      <nav id="nav-mobile" class="mobile-only" [style.display]="menuOpen ? 'block' : 'none'">
+        <app-navmenu
+          [menu]="menu"
+          [menuOpen]="menuOpen"
+          (menuStatus)="toggleMenu($event)">
+        </app-navmenu>
+      </nav>
+    </div>
+  </div>
+</div>

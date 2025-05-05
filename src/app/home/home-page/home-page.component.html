@@ -1,0 +1,26 @@
+@if (header$ | async; as header) {
+	<div>
+		<header
+			id="banner" class="scrollto clearfix shift-left" data-enllax-ratio=".5">
+			<video autoplay muted loop playsinline id='background-video'>
+				<source src='{{header.video}}' type='video/mp4'>
+			</video>
+			<div id="banner-content" class="row clearfix pull-right">
+				<div class="overlay">
+				</div>
+
+				
+
+				<div class="col-38">
+					<div class="section-heading">
+						<h1>{{ header.tagline }}</h1>
+						<h2>{{ header.title }}</h2>
+					</div>
+					<a routerLink="{{ header.buttonlink }}" class="button">{{
+						header.buttontext
+					}}</a>
+				</div>
+			</div>
+		</header>
+	</div>
+}
