@@ -1,12 +1,10 @@
 <section id="clients" class="scrollto clearfix">
   <div class="row clearfix pull-right">
     @if (clients$ | async; as clients) {
-      <div class="col-3">
-        <div class="section-heading">
-          <h3>{{ clients.tagline }}</h3>
-          <h2 class="section-title">{{ clients.title }}</h2>
-          <p class="section-subtitle">{{ clients.description }}</p>
-        </div>
+      <div class="section-heading">
+        <h3>{{ clients[0]?.tagline }}</h3>
+        <h2 class="section-title">{{ clients[0]?.title }}</h2>
+        <p class="section-subtitle">{{ clients[0]?.description }}</p>
       </div>
     }
 
